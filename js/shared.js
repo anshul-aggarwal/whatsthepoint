@@ -1,16 +1,21 @@
 /* shared.js — injects header and footer into every page */
 
-const SITE_NAME    = "What's The Point.";
-const SITE_TAGLINE = "Clear-eyed thinking on AI, strategy & the enterprise";
+const GTAG = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9XYVRJE07"><\/script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B9XYVRJE07');
+<\/script>`;
 
 function renderHeader() {
   const current = window.location.pathname.split('/').pop() || 'index.html';
   const navLinks = [
-    { href: 'index.html',    label: 'Home'      },
-    { href: 'blog.html',     label: 'Blog'      },
-    { href: 'about.html',    label: 'About'     },
-    { href: 'speaking.html', label: 'Speaking'  },
-    { href: 'contact.html',  label: 'Contact'   },
+    { href: 'index.html',  label: 'Home'    },
+    { href: 'blog.html',   label: 'Blog'    },
+    { href: 'about.html',  label: 'About'   },
+    { href: 'contact.html',label: 'Contact' },
   ];
 
   return `
@@ -25,7 +30,7 @@ function renderHeader() {
             <a href="${l.href}" class="${l.href === current ? 'active' : ''}">${l.label}</a>
           `).join('')}
         </nav>
-        <a href="contact.html" class="masthead__cta">Hire for Consulting →</a>
+        <a href="contact.html" class="masthead__cta">Work with Me →</a>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -49,6 +54,11 @@ function renderFooter() {
       <div class="footer-brand">
         <h3>What's The Point<span style="color:var(--accent)">.</span></h3>
         <p>Honest, direct writing on AI strategy, enterprise transformation, and what actually matters in the age of machine intelligence.</p>
+        <div style="margin-top:1.25rem;display:flex;gap:0.75rem;">
+          <a href="https://linkedin.com/in/anshul-aggarwal" target="_blank" rel="noopener" aria-label="LinkedIn"
+             style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#0077b5;color:#fff;font-size:0.75rem;font-family:var(--font-mono);font-weight:600;text-decoration:none;transition:opacity 0.15s;"
+             onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">in</a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
@@ -56,7 +66,6 @@ function renderFooter() {
           <li><a href="index.html">Home</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="speaking.html">Speaking</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -66,22 +75,20 @@ function renderFooter() {
           <li><a href="blog.html">AI Strategy</a></li>
           <li><a href="blog.html">Enterprise ML</a></li>
           <li><a href="blog.html">Leadership</a></li>
-          <li><a href="blog.html">Ethics & Risk</a></li>
+          <li><a href="blog.html">Ethics &amp; Risk</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <ul>
-          <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-          <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
-          <li><a href="https://github.com" target="_blank">GitHub</a></li>
-          <li><a href="mailto:hello@whatsthepoint.to">Email</a></li>
+          <li><a href="https://linkedin.com/in/anshul-aggarwal" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="contact.html">Get in Touch</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 whatsthepoint.to — All rights reserved</span>
-      <span>Hosted on GitHub Pages · Custom domain</span>
+      <span>© ${new Date().getFullYear()} Anshul Aggarwal · whatsthepoint.to</span>
+      <span>Hosted on GitHub Pages</span>
     </div>
   </footer>`;
 }
@@ -91,4 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const footerSlot = document.getElementById('site-footer');
   if (headerSlot) headerSlot.outerHTML = renderHeader();
   if (footerSlot)  footerSlot.outerHTML = renderFooter();
+
+  // Inject gtag into <head> dynamically
+  const gtagDiv = document.createElement('div');
+  gtagDiv.innerHTML = GTAG;
+  // gtag scripts are already on the page via inline in each HTML file
 });
