@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — What's The Point.</title>
+  <meta name="description" content="Get in touch about consulting, speaking, or just to push back on something I wrote." />
+  <link rel="canonical" href="https://whatsthepoint.to/contact.html" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='%23d4380d' font-family='serif' font-weight='900'>?</text></svg>" />
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero__inner">
+    <p class="page-hero__label">Get in Touch</p>
+    <h1>Let's talk<br>about <em>what matters.</em></h1>
+  </div>
+</section>
+
+<div class="contact-layout">
+
+  <!-- FORM -->
+  <div class="reveal">
+    <h2 style="font-size:1.8rem;margin-bottom:0.5rem;">Send a Message</h2>
+    <p style="color:var(--muted);font-size:0.95rem;margin-bottom:2rem;">
+      Consulting enquiries, speaking requests, feedback on something I wrote, or a disagreement you'd like to make a case for. All welcome.
+    </p>
+
+    <form class="contact-form" novalidate>
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="company">Company / Organisation</label>
+        <input type="text" id="company" name="company" placeholder="Acme Corp" />
+      </div>
+
+      <div class="form-group">
+        <label for="type">What's this about?</label>
+        <select id="type" name="type" required>
+          <option value="" disabled selected>Choose a topic…</option>
+          <option value="consulting">Consulting Enquiry</option>
+          <option value="speaking">Speaking / Keynote Request</option>
+          <option value="workshop">Workshop Booking</option>
+          <option value="podcast">Podcast / Media</option>
+          <option value="feedback">Reader Feedback</option>
+          <option value="other">Something Else</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me what you're working on, what you need, or what you disagree with…" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message →</button>
+    </form>
+
+    <p style="margin-top:1.5rem;font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">
+      Note: This form uses a static HTML template. Wire it to Formspree, Netlify Forms, or your preferred service.
+    </p>
+  </div>
+
+  <!-- INFO -->
+  <div class="contact-info reveal">
+
+    <h3>Other Ways to Reach Me</h3>
+    <p>
+      I try to respond to all genuine enquiries within a few days. For urgent consulting needs, email is fastest.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:hello@whatsthepoint.to" class="contact-link">
+        <span class="contact-link__icon">@</span>
+        hello@whatsthepoint.to
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="contact-link">
+        <span class="contact-link__icon">in</span>
+        linkedin.com/in/yourname
+      </a>
+      <a href="https://twitter.com" target="_blank" class="contact-link">
+        <span class="contact-link__icon">𝕏</span>
+        @yourhandle
+      </a>
+    </div>
+
+    <hr class="rule" style="margin: 2rem 0;" />
+
+    <h4 style="font-size:1.1rem;margin-bottom:0.75rem;">What I'm currently open to</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem;">
+      <li style="display:flex;gap:0.75rem;align-items:baseline;font-size:0.95rem;color:var(--muted);">
+        <span style="color:var(--accent);font-weight:bold;">✓</span> Advisory / fractional strategy work
+      </li>
+      <li style="display:flex;gap:0.75rem;align-items:baseline;font-size:0.95rem;color:var(--muted);">
+        <span style="color:var(--accent);font-weight:bold;">✓</span> Conference keynotes & panels
+      </li>
+      <li style="display:flex;gap:0.75rem;align-items:baseline;font-size:0.95rem;color:var(--muted);">
+        <span style="color:var(--accent);font-weight:bold;">✓</span> Executive workshops (in-person & virtual)
+      </li>
+      <li style="display:flex;gap:0.75rem;align-items:baseline;font-size:0.95rem;color:var(--muted);">
+        <span style="color:var(--accent);font-weight:bold;">✓</span> Podcast & media appearances
+      </li>
+      <li style="display:flex;gap:0.75rem;align-items:baseline;font-size:0.95rem;color:#ccc;">
+        <span style="color:#ccc;">—</span> Full-time employment (not right now)
+      </li>
+    </ul>
+
+    <hr class="rule" style="margin: 2rem 0;" />
+
+    <div style="background:var(--cream);padding:1.5rem;border-left:4px solid var(--ink);">
+      <p style="font-family:var(--font-mono);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.5rem;">Response time</p>
+      <p style="font-size:0.95rem;color:var(--ink);line-height:1.6;">
+        I aim to reply within 48 hours on weekdays. If you haven't heard back in a week, feel free to follow up — I'm not ignoring you, I've probably lost the thread.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script src="js/shared.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

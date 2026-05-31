@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your AI Strategy Is a Procurement Exercise in Disguise — What's The Point.</title>
+  <meta name="description" content="Most enterprise AI initiatives fail not because the models are wrong, but because the governance conversation never happened." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='%23d4380d' font-family='serif' font-weight='900'>?</text></svg>" />
+  <style>
+    .post-hero {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 5rem 2rem 4rem;
+    }
+    .post-hero__inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .post-hero__tags { display:flex;gap:0.5rem;margin-bottom:1.5rem; }
+    .post-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .post-hero .standfirst {
+      font-size: 1.2rem;
+      color: #bbb;
+      line-height: 1.65;
+      max-width: 58ch;
+    }
+    .post-meta-bar {
+      background: var(--cream);
+      border-bottom: 2px solid var(--ink);
+      padding: 1rem 2rem;
+    }
+    .post-meta-bar__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .post-body {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .share-bar {
+      padding: 2rem 0;
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .share-link {
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      transition: opacity 0.15s;
+    }
+    .share-link:hover { opacity: 0.7; }
+    .related-posts {
+      background: var(--cream);
+      padding: 4rem 2rem;
+      margin-top: 4rem;
+      border-top: 2px solid var(--ink);
+    }
+    .related-posts__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .related-posts h3 {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--ink);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 2px solid var(--ink);
+    }
+    @media (max-width: 768px) {
+      .related-grid { grid-template-columns: 1fr; }
+    }
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent);
+      z-index: 999;
+      transition: width 0.1s;
+      width: 0%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<div id="site-header"></div>
+
+<!-- POST HERO -->
+<section class="post-hero">
+  <div class="post-hero__inner">
+    <div class="post-hero__tags">
+      <span class="tag">AI Strategy</span>
+    </div>
+    <h1>Why Your AI Strategy Is a Procurement Exercise in Disguise</h1>
+    <p class="standfirst">Most enterprise AI initiatives fail not because the models are wrong, but because the governance conversation never happened. Here's how to have it.</p>
+  </div>
+</section>
+
+<!-- META BAR -->
+<div class="post-meta-bar">
+  <div class="post-meta-bar__inner">
+    <span>12 June 2025</span>
+    <span>·</span>
+    <span>8 min read</span>
+    <span>·</span>
+    <span>By <a href="about.html" style="color:var(--accent);">Your Name</a></span>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<article class="post-body article-body reveal">
+
+  <p>
+    In the past eighteen months, I've sat in more "AI strategy" workshops than I can count. They all follow the same rhythm: enthusiastic kickoff, impressive demos, breathless possibilities. Then — sometime in the third session — someone asks who owns the data governance policy for the model's outputs.
+  </p>
+
+  <p>
+    The room goes quiet. Someone says "IT." Someone else says "Legal." A third person says "isn't that what we're building the framework for?" And then the conversation moves on, unresolved, to discuss the exciting use cases again.
+  </p>
+
+  <p>
+    <strong>This is not an AI problem. It's a procurement problem wearing AI clothes.</strong>
+  </p>
+
+  <h2>The Procurement Parallel</h2>
+
+  <p>
+    Think about what happens when an enterprise buys a significant SaaS platform. There's a vendor assessment. There's a security review. There's a data processing agreement. Someone in procurement asks awkward questions about exit clauses and data portability. The process is annoying, but it forces the organisation to answer several important questions before money changes hands.
+  </p>
+
+  <p>
+    Enterprise AI adoption — at least the version happening in most organisations right now — skips most of those questions. The urgency ("our competitors are using it!") and the novelty ("nobody really knows how this works yet") create a permission structure to move fast and figure the rest out later.
+  </p>
+
+  <blockquote>
+    The most expensive AI strategy isn't the one you overpay for. It's the one you can't explain to your own board six months after deployment.
+  </blockquote>
+
+  <h2>Three Questions That Don't Get Asked</h2>
+
+  <p>
+    In mature procurement processes, three categories of question almost always surface. In AI adoption, they almost never do — or if they do, they arrive too late to change anything meaningful.
+  </p>
+
+  <h3>1. What does "wrong" look like?</h3>
+
+  <p>
+    For a traditional software system, failure modes are relatively constrained. The API times out. The query returns an error. The report shows a null value. For an LLM-based system, the failure mode is softer: the output is plausible but incorrect. It's confident but fabricated. It's helpful for the average case but catastrophically wrong for the edge case.
+  </p>
+
+  <p>
+    Before deployment, you should be able to articulate what "wrong" looks like for your specific use case — and more importantly, who is responsible for catching it. If you can't answer that, you don't have a governance framework. You have optimism.
+  </p>
+
+  <h3>2. What is the human review process?</h3>
+
+  <p>
+    Most AI deployments are presented as either fully automated (the model handles it end-to-end) or fully human-supervised (the model assists but a human approves everything). The reality of most production systems is messier than either extreme. Humans review high-risk outputs. They don't review low-risk outputs. But the threshold for "high risk" was set once during design and never revisited.
+  </p>
+
+  <p>
+    The question to ask is not "is there a human in the loop?" but "is the human in the loop calibrated correctly?" And calibration means regularly revisiting whether the threshold still makes sense as the system's behaviour evolves.
+  </p>
+
+  <h3>3. How do we know when it's getting worse?</h3>
+
+  <p>
+    Traditional software systems don't spontaneously degrade in mysterious ways. AI systems can. Model drift, distribution shift, changing usage patterns — all of these can erode performance in ways that don't trigger obvious alerts. The monitoring question for AI is not just "is the system up?" but "is the system still performing the way we designed it to?"
+  </p>
+
+  <p>
+    If the answer is "we'll notice when users complain," that's not monitoring. That's user testing in production with your customers as the testers.
+  </p>
+
+  <h2>What Minimum Viable Governance Actually Looks Like</h2>
+
+  <p>
+    I want to be careful here not to suggest that good governance requires an extensive bureaucracy. Some of the worst AI governance frameworks I've seen are elaborate documents that nobody reads, produced to satisfy a risk team's requirement and immediately filed in a shared drive labelled "Compliance."
+  </p>
+
+  <p>
+    Minimum viable governance for an AI deployment means being able to answer four things clearly:
+  </p>
+
+  <ul style="list-style:none;padding:0;margin:1.5rem 0;display:flex;flex-direction:column;gap:0.75rem;">
+    <li style="padding-left:1.5rem;border-left:3px solid var(--accent);font-size:1.05rem;">Who is accountable for this system's outputs?</li>
+    <li style="padding-left:1.5rem;border-left:3px solid var(--accent);font-size:1.05rem;">How would we know if it started producing harmful outputs?</li>
+    <li style="padding-left:1.5rem;border-left:3px solid var(--accent);font-size:1.05rem;">What's the escalation process when something goes wrong?</li>
+    <li style="padding-left:1.5rem;border-left:3px solid var(--accent);font-size:1.05rem;">When was this last reviewed, and when is the next review?</li>
+  </ul>
+
+  <p>
+    That's it. Four questions. If you can answer them, you have governance. If you can't, you don't — and all the vendor demos in the world won't change that.
+  </p>
+
+  <h2>The Uncomfortable Conclusion</h2>
+
+  <p>
+    Enterprise AI strategy is often treated as a technical conversation with strategic implications. I'd argue it's the reverse: a strategic conversation with technical implementation details. The organisations that are getting this right are the ones who had the governance conversation first, even when it was uncomfortable, even when it slowed things down.
+  </p>
+
+  <p>
+    The organisations that skipped it are the ones emailing their consultants in a panic about something the model said to a customer last Tuesday.
+  </p>
+
+  <p>
+    Don't be the second kind of organisation. Ask the procurement questions. Have the governance conversation. Make it boring on purpose — boring governance that works is worth infinitely more than exciting governance that doesn't.
+  </p>
+
+  <!-- Share bar -->
+  <div class="share-bar">
+    <span>Share this essay:</span>
+    <a href="https://twitter.com/intent/tweet?url=https://whatsthepoint.to/post.html" target="_blank" class="share-link">Twitter / X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://whatsthepoint.to/post.html" target="_blank" class="share-link">LinkedIn</a>
+    <a href="mailto:?subject=Worth Reading&body=https://whatsthepoint.to/post.html" class="share-link">Email</a>
+  </div>
+
+</article>
+
+<!-- RELATED POSTS -->
+<section class="related-posts">
+  <div class="related-posts__inner">
+    <h3>Related Essays</h3>
+    <div class="related-grid">
+      <article class="post-card">
+        <div class="post-card__number">
+          <span class="tag tag--navy">Leadership</span>
+          <span>May 2025</span>
+        </div>
+        <h3><a href="post.html">The AI Manager's Dilemma: When to Trust the Output</a></h3>
+        <p class="excerpt">Calibrating trust in AI systems is a skill. It's also one almost no management training programme covers.</p>
+        <div class="post-card__footer"><span>28 May 2025</span><span>6 min</span></div>
+      </article>
+      <article class="post-card">
+        <div class="post-card__number">
+          <span class="tag tag--outline">Ethics & Risk</span>
+          <span>Apr 2025</span>
+        </div>
+        <h3><a href="post.html">The Accountability Gap: Who Signs Off When the AI Is Wrong?</a></h3>
+        <p class="excerpt">As LLMs move from prototypes to production, the accountability question becomes unavoidable.</p>
+        <div class="post-card__footer"><span>22 Apr 2025</span><span>9 min</span></div>
+      </article>
+      <article class="post-card">
+        <div class="post-card__number">
+          <span class="tag">AI Strategy</span>
+          <span>Mar 2025</span>
+        </div>
+        <h3><a href="post.html">Stop Calling It a Pilot. You Mean a Proof of Concept.</a></h3>
+        <p class="excerpt">The language we use around AI experiments shapes how leadership evaluates them.</p>
+        <div class="post-card__footer"><span>10 Mar 2025</span><span>5 min</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/shared.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Reading progress bar
+  const bar = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  });
+</script>
+</body>
+</html>

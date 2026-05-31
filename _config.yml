@@ -1,0 +1,14 @@
+# GitHub Pages configuration
+# whatsthepoint.to
+
+title: "What's The Point."
+description: "Clear-eyed thinking on AI strategy, enterprise transformation, and what actually matters."
+url: "https://whatsthepoint.to"
+baseurl: ""
+
+# Disable Jekyll processing (pure static HTML site)
+# Tell GitHub Pages not to process with Jekyll
+exclude:
+  - README.md
+
+plugins: []
