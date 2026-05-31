@@ -10,27 +10,34 @@ const GTAG = `<!-- Google tag (gtag.js) -->
 <\/script>`;
 
 function renderHeader() {
-  const current = window.location.pathname.split('/').pop() || 'index.html';
+  // Detect if we're inside a subdirectory (e.g. posts/) and prefix accordingly
+  const parts   = window.location.pathname.split('/').filter(Boolean);
+  // On GitHub Pages the repo name may be the first segment; posts are one level deep
+  // We detect depth by checking if the current file's directory contains a known subdir name
+  const inSubdir = parts.length >= 2 && parts[parts.length - 2] === 'posts';
+  const base     = inSubdir ? '../' : '';
+  const current  = parts[parts.length - 1] || 'index.html';
+
   const navLinks = [
-    { href: 'index.html',  label: 'Home'    },
-    { href: 'blog.html',   label: 'Blog'    },
-    { href: 'about.html',  label: 'About'   },
-    { href: 'contact.html',label: 'Contact' },
+    { href: `${base}index.html`,   label: 'Home'    },
+    { href: `${base}blog.html`,    label: 'Blog'    },
+    { href: `${base}about.html`,   label: 'About'   },
+    { href: `${base}contact.html`, label: 'Contact' },
   ];
 
   return `
   <header>
     <div class="masthead">
       <div class="masthead__inner">
-        <a href="index.html" class="masthead__logo">
+        <a href="${base}index.html" class="masthead__logo">
           What's The Point<span class="dot">.</span>
         </a>
         <nav class="main-nav" role="navigation" aria-label="Main navigation">
           ${navLinks.map(l => `
-            <a href="${l.href}" class="${l.href === current ? 'active' : ''}">${l.label}</a>
+            <a href="${l.href}" class="${l.href.endsWith(current) ? 'active' : ''}">${l.label}</a>
           `).join('')}
         </nav>
-        <a href="contact.html" class="masthead__cta">Work with Me →</a>
+        <a href="${base}contact.html" class="masthead__cta">Work with Me →</a>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -48,6 +55,10 @@ function renderHeader() {
 }
 
 function renderFooter() {
+  const parts   = window.location.pathname.split('/').filter(Boolean);
+  const inSubdir = parts.length >= 2 && parts[parts.length - 2] === 'posts';
+  const base     = inSubdir ? '../' : '';
+
   return `
   <footer>
     <div class="footer-grid">
@@ -63,26 +74,26 @@ function renderFooter() {
       <div class="footer-col">
         <h4>Navigate</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="${base}index.html">Home</a></li>
+          <li><a href="${base}blog.html">Blog</a></li>
+          <li><a href="${base}about.html">About</a></li>
+          <li><a href="${base}contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Topics</h4>
         <ul>
-          <li><a href="blog.html">AI Strategy</a></li>
-          <li><a href="blog.html">Enterprise ML</a></li>
-          <li><a href="blog.html">Leadership</a></li>
-          <li><a href="blog.html">Ethics &amp; Risk</a></li>
+          <li><a href="${base}blog.html">AI Strategy</a></li>
+          <li><a href="${base}blog.html">Enterprise ML</a></li>
+          <li><a href="${base}blog.html">Leadership</a></li>
+          <li><a href="${base}blog.html">Ethics &amp; Risk</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <ul>
           <li><a href="https://linkedin.com/in/anshul-aggarwal" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="${base}contact.html">Get in Touch</a></li>
         </ul>
       </div>
     </div>

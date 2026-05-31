@@ -51,18 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact form
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('.submit-btn');
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#2d6a4f';
-      btn.disabled = true;
-    });
-  }
-
   // Archive filter buttons
   const filterBtns = document.querySelectorAll('.filter-btn');
   if (filterBtns.length) {
