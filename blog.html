@@ -18,34 +18,38 @@
   </script>
 </head>
 <body>
-
 <div id="site-header"></div>
-
 <section class="page-hero">
   <div class="page-hero__inner">
     <p class="page-hero__label">Archive</p>
     <h1>All <em>Essays.</em></h1>
   </div>
 </section>
-
 <div class="archive-layout">
   <main>
     <div class="archive-filters">
       <button class="filter-btn active" data-tag="all">All</button>
-      <button class="filter-btn" data-tag="strategy">AI Strategy</button>
-      <button class="filter-btn" data-tag="ml">Enterprise ML</button>
+      <button class="filter-btn" data-tag="ai-strategy">AI Strategy</button>
+      <button class="filter-btn" data-tag="enterprise-ml">Enterprise ML</button>
       <button class="filter-btn" data-tag="leadership">Leadership</button>
-      <button class="filter-btn" data-tag="ethics">Ethics &amp; Risk</button>
+      <button class="filter-btn" data-tag="ethics-risk">Ethics &amp; Risk</button>
     </div>
-
     <div class="archive-post-list">
-      <p style="padding:3rem 0;font-family:var(--font-mono);font-size:0.85rem;color:var(--muted);letter-spacing:0.05em;">
-        No posts yet — check back soon.
-      </p>
+      
+      <a class="archive-post-item" href="posts/test-post-please-ignore.html" data-tags="ai-strategy">
+        <div class="archive-post-item__date">31 May 2026</div>
+        <div>
+          <span class="tag" style="margin-bottom:0.5rem;display:inline-block;">AI Strategy</span>
+          <h3>test post please ignore</h3>
+          <p class="excerpt">boool</p>
+          <div style="font-family:var(--font-mono);font-size:0.63rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">
+            <span>1 min read</span>
+          </div>
+        </div>
+      </a>
     </div>
   </main>
-
-  <aside class="archive-sidebar reveal">
+  <aside class="archive-sidebar">
     <div class="sidebar-block">
       <h4>Topics</h4>
       <div class="tag-cloud">
@@ -54,11 +58,9 @@
         <span class="tag tag--outline">Enterprise ML</span>
         <span class="tag tag--outline">Ethics &amp; Risk</span>
         <span class="tag tag--outline">Governance</span>
-        <span class="tag tag--outline">ROI</span>
         <span class="tag">Org Design</span>
       </div>
     </div>
-
     <div class="sidebar-block">
       <h4>About the Author</h4>
       <p style="font-size:0.88rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;">
@@ -68,9 +70,7 @@
     </div>
   </aside>
 </div>
-
 <div id="site-footer"></div>
-
 <script src="js/shared.js"></script>
 <script src="js/main.js"></script>
 </body>

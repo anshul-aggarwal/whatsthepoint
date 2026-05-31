@@ -10,7 +10,7 @@ from pathlib import Path
 from datetime import date, datetime
 
 # ── Config ──────────────────────────────────────────────────────────────────
-SITE_ROOT   = Path(__file__).parent.parent
+SITE_ROOT   = Path(__file__).parent.parent          # /home/claude/wtp
 POSTS_DIR   = SITE_ROOT / "posts"
 INDEX_FILE  = SITE_ROOT / "index.html"
 BLOG_FILE   = SITE_ROOT / "blog.html"
@@ -45,11 +45,11 @@ def slugify(text):
 
 def load_meta():
     if META_FILE.exists():
-        return json.loads(META_FILE.read_text())
+        return json.loads(META_FILE.read_text(encoding="utf-8"))
     return []
 
 def save_meta(posts):
-    META_FILE.write_text(json.dumps(posts, indent=2, default=str))
+    META_FILE.write_text(json.dumps(posts, indent=2, default=str), encoding="utf-8")
 
 def reading_time(body_html):
     words = len(re.sub('<[^>]+>', '', body_html).split())
@@ -59,7 +59,7 @@ def reading_time(body_html):
 def format_date(d):
     if isinstance(d, str):
         d = datetime.strptime(d, "%Y-%m-%d").date()
-    return d.strftime("%-d %b %Y")
+    return d.strftime("%#d %b %Y") if os.name == "nt" else d.strftime("%-d %b %Y")
 
 def render_post_html(slug, title, standfirst, tag, pub_date, body_html, read_time):
     tag_class = TAG_CLASSES.get(tag, "tag")
@@ -274,7 +274,7 @@ def rebuild_index(posts):
 <script src="js/main.js"></script>
 </body>
 </html>"""
-    INDEX_FILE.write_text(content)
+    INDEX_FILE.write_text(content, encoding="utf-8")
 
 def rebuild_blog(posts):
     published = [p for p in posts if p.get('published')]
@@ -344,7 +344,7 @@ def rebuild_blog(posts):
 <script src="js/main.js"></script>
 </body>
 </html>"""
-    BLOG_FILE.write_text(content)
+    BLOG_FILE.write_text(content, encoding="utf-8")
 
 # ── Streamlit UI ─────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -428,7 +428,7 @@ if page == "📝 New Post":
             post_html = render_post_html(slug, title, standfirst, tag, pub_date, body, read_time)
 
             # Write the HTML file
-            (POSTS_DIR / f"{slug}.html").write_text(post_html)
+            (POSTS_DIR / f"{slug}.html").write_text(post_html, encoding="utf-8")
 
             # Update meta
             entry = {
